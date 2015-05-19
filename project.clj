@@ -9,21 +9,21 @@
 
   :test-paths ["spec/clj"]
 
-  :dependencies [;;[kovasb/gamma "0.1.1"]
-                 [org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2511" :scope "provided"]
-                 [kovasb/gamma "0.1.2-SNAPSHOT"]
-                 [kovasb/gamma-driver "0.1.0-SNAPSHOT"]
-                 [kovasb/fipp "0.5.3"]
+  :dependencies [
+                 [kovasb/gamma "0.0-135"]
+                 [kovasb/gamma-driver "0.0-26"]
+                 [org.clojure/clojurescript "0.0-3291"]
+
+
                  [ring "1.3.2"]
                  [ring/ring-defaults "0.1.3"]
-                 [compojure "1.3.1"]
+                 [compojure "1.3.4"]
                  [enlive "1.1.5"]
                  [om "0.8.0-rc1"]
                  [environ "1.0.0"]
                  [thi.ng/geom "0.0.783"]]
 
-  :plugins [[lein-cljsbuild "1.0.3"]
+  :plugins [[lein-cljsbuild "1.0.5"]
             [lein-environ "1.0.0"]]
 
   :min-lein-version "2.5.0"
@@ -41,15 +41,16 @@
   :profiles {:dev {:source-paths ["src/cljs" "env/dev/clj"]
                    :test-paths ["test/clj"]
 
-                   :dependencies [[figwheel "0.2.1-SNAPSHOT"]
-                                  [figwheel-sidecar "0.2.1-SNAPSHOT"]
-                                  [com.cemerick/piggieback "0.1.3"]
-                                  [weasel "0.4.2"]]
+                   :dependencies [[figwheel "0.3.3"]
+                                  [figwheel-sidecar "0.3.3"]
+                                  ;[com.cemerick/piggieback "0.1.5"]
+                                  ;[weasel "0.6.0"]
+                                  ]
 
                    :repl-options {:init-ns gampg.server
                                   :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
-                   :plugins [[lein-figwheel "0.2.1-SNAPSHOT"]]
+                   :plugins [[lein-figwheel "0.3.3"]]
 
                    :figwheel {:http-server-root "public"
                               :server-port 3449

@@ -1,6 +1,8 @@
 (ns gampg.server
   (:require [clojure.java.io :as io]
-            [gampg.dev :refer [is-dev? inject-devmode-html browser-repl start-figwheel]]
+            [gampg.dev :refer [is-dev? inject-devmode-html
+                               ;browser-repl
+                               start-figwheel]]
             [compojure.core :refer [GET defroutes]]
             [compojure.route :refer [resources]]
             [net.cgrand.enlive-html :refer [deftemplate]]

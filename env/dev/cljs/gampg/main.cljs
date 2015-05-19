@@ -2,7 +2,9 @@
   (:require [gampg.core :as core]
             [figwheel.client :as figwheel :include-macros true]
             [cljs.core.async :refer [put!]]
-            [weasel.repl :as weasel]))
+            [clojure.browser.repl :as repl]
+    ;[weasel.repl :as weasel]
+            ))
 
 (enable-console-print!)
 
@@ -11,6 +13,10 @@
   :jsload-callback (fn []
                      (core/main)))
 
-(weasel/connect "ws://localhost:9001" :verbose true :print #{:repl :console})
+(comment
+  (defonce conn
+          (repl/connect "http://localhost:3449/repl")))
+
+;(weasel/connect "ws://localhost:9001" :verbose true :print #{:repl :console})
 
 (core/main)
